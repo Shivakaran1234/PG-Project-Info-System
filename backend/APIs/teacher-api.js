@@ -105,6 +105,27 @@ teacherapp.put('/permission',expressAsyncHandler(async(req,res)=>{
     // res.send({message:"permission denied",payload:result})
     // }
 }))
+
+//teacher sending circular
+teacherapp.put('/CircularForm',expressAsyncHandler(async(req,res)=>{
+    const student=req.body;
+    const newRequest = {
+        studentId: student.teacherId,
+        studentName: student.userName,
+    }
+    const result = await teachercollection.findOneAndUpdate(
+        { userId: circular.teacherId },
+        { $push: { circulars: newRequest}},
+        { returnDocument: "after"},
+    );
+    if (result){
+        res.send({ message: "Circular added successfully", payload:result})
+    }else{
+        res.status(404).send({message:"teacher not found"})
+    }
+    }
+    
+))
 //teacher with requests
 // teacherapp.get('/requests/:teacherId', expressAsyncHandler(async (req, res) => {
     

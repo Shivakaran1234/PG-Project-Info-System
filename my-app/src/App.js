@@ -14,6 +14,8 @@ import Permissionrequest from './components/permissionrequests/Permissionrequest
 import SearchComponent from './components/search/SearchComponent';
 import MyProjects from './components/myProjects/MyProjects';
 import ProjectById from './components/projectById/ProjectById';
+import CircularForm from './components/CircularForm/CircularForm';
+import StudentDashboard from './components/studentDashboard/StudentDashboard';
 
 function App() {
   let router=createBrowserRouter([{
@@ -61,8 +63,16 @@ function App() {
             element:<MyProjects/>
           },
           {
+            path:'circular',
+            element:<StudentDashboard/>
+          },
+          {
             path:'projects/:projectId',
             element:<ProjectById/>
+          },
+          {
+            path:'studentDashboard',
+            element:<StudentDashboard/>
           },
           {
             path:'',
@@ -93,6 +103,10 @@ function App() {
           {
             path:'projects/:projectId',
             element:<ProjectById/>
+          },
+          {
+            path:'CircularForm',
+            element:<CircularForm/>
           },
           {
             path:'',

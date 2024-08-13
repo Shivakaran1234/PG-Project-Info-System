@@ -11,6 +11,7 @@ function TeacherProfile() {
         <li className='nav-item'><NavLink className="nav-link" to={'projects'}>Projects</NavLink></li>
         <li className='nav-item'><NavLink className="nav-link" to={'ProjectForm'}>Add Project</NavLink></li>
         <li className='nav-item'><NavLink className="nav-link" to={'permission-requests'}>Permission Request</NavLink></li>
+        <li className='nav-item'><NavLink className="nav-link" to={'CircularForm'}>CircularForm</NavLink></li>
       </ul>
       <Outlet />
     </div>

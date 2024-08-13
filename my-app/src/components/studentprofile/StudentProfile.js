@@ -18,6 +18,9 @@ function StudentProfile() {
       {currentUser.permission&&(<ul className='nav'>
         <li className='nav-item'><NavLink className='nav-link' to='ProjectForm'>Add Project</NavLink></li>
       </ul>)}
+      <li className='nav-item'>
+          <NavLink className='nav-link' to={'circular'}>StudentDashboard</NavLink>
+        </li>
       </ul>
       <Outlet/>
     </div>

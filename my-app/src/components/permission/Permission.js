@@ -25,7 +25,7 @@ function Permission() {
     console.log(res.data.message)
     if (res.data.message === "validated") {
       console.log(currentUser)
-      let upduser = { ...currentUser, teacherId: faculty.userId }
+      let upduser = { ...currentUser, teacherId: faculty.userId,teacherCircular:faculty.userName }
       delete upduser._id;
       let permission = await axiosWithToken.put('http://localhost:4000/teacher-api/permission', upduser)
 
@@ -35,6 +35,8 @@ function Permission() {
       setErr(res.data.message)
     }
   }
+
+  
   return (
     <div>
       <div className="ask-permission-container">
